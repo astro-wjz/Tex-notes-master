@@ -11,7 +11,7 @@
 	\geometry{left=3.17cm,right=3.17cm,top=2.54cm,bottom=2.54cm}
 	% \setlength{\parindent}{0pt} % Set no indent this article.
 	\usepackage{indentfirst}    % Set first paragraph indent.
-	% \setlength{\parskip}{1em}   % Set paragraph space.
+	% \setlength{\parskip}{1em}   % Set paragraph space of title.
 	% \setlength{\lineskip}{2em}  % Set line space of title.
 
 % Header and Footer
@@ -24,6 +24,7 @@
 
 % Packages may be used
 	\usepackage{xcolor}
+	\usepackage{enumerate}
 	\usepackage{amssymb}
 	\usepackage{setspace}
 	\usepackage{graphicx}
@@ -43,87 +44,91 @@
 \begin{document}
 \maketitle
 
-\tableofcontents
-
+\tableofcontents % make contents
 \newpage
+
 % \begin{center}
 % \section{Section 1}
 % \end{center}
 % \vspace{3ex}
+
 % \begin{spacing}{2.0} % Set line space from here to '\end{spacing}'
 
 \section{Section One}
 
-Text\upcite{ref1}.
+	\begin{enumerate}
+	% \begin{enumerate}[(1)]
+	\item Text\upcite{ref1}.
 
-Text\cite{ref1,ref2}.
+	\item Text\cite{ref1,ref2}.
 
-Text.
+	\item Text.
+	\end{enumerate}
 
 \section{Section Two}
 
-Text.
+	\textcolor{red}{Text.}
 
-\subsection{Paragraph One}
+	\subsection{Paragraph One}
 
-Figures.
+		Figures.
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=4cm,height=5cm]{2-1.png}
-	\caption{This is Figure 1.}
-\end{figure}
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=4cm,height=5cm]{2-1.png}
+			\caption{This is Figure 1.}
+		\end{figure}
 
-\begin{figure}[ht]
-	\centering
-	\subfigure[Figure 2(a)]{
-	\includegraphics[width=4cm,height=5cm]{2-1.png}}
-	\hspace{0in}
-	\subfigure[Figure 2(b)]{
-	\includegraphics[width=4cm,height=5cm]{2-1.png}}
-	\caption{This is Figure 2.}
-\end{figure}
+		\begin{figure}[ht]
+			\centering
+			\subfigure[Figure 2(a)]{
+			\includegraphics[width=4cm,height=5cm]{2-1.png}}
+			\hspace{0in}
+			\subfigure[Figure 2(b)]{
+			\includegraphics[width=4cm,height=5cm]{2-1.png}}
+			\caption{This is Figure 2.}
+		\end{figure}
 
-\subsection{Paragraph Two}
+	\subsection{Paragraph Two}
 
-Equations.
+		Equations.
 
-\begin{equation}
-	\mathbf{E}=\sum_{l=0}^{\infty} \sum_{m=-l}^{l}\left(E_{l m}^{r}(r) \mathbf{Y}_{l m}+E_{l m}^{(1)}(r) \mathbf{\Psi}_{l m}+E_{l m}^{(2)}(r) \mathbf{\Phi}_{l m}\right)
-\end{equation}
+		\begin{equation}
+			\mathbf{E}=\sum_{l=0}^{\infty} \sum_{m=-l}^{l}\left(E_{l m}^{r}(r) \mathbf{Y}_{l m}+E_{l m}^{(1)}(r) \mathbf{\Psi}_{l m}+E_{l m}^{(2)}(r) \mathbf{\Phi}_{l m}\right)
+		\end{equation}
 
-\begin{align}
-	\mathbf{Y}_{l m}    & =Y_{l m}(\phi,\theta)\  \hat{\mathbf{e}}_r \\
-    \mathbf{\Psi}_{l m} & =r \nabla Y_{l m}=\frac{1}{\sin \theta} \frac{\partial Y_{lm}}{\partial \phi}\hat{\mathbf{e}_{\phi}} + \frac{\partial Y_{lm}}{\partial \theta}\hat{\mathbf{e}_{\theta}} \\
-    \notag
-    \mathbf{\Phi}_{l m} & =\overrightarrow{\mathbf{r}} \times \nabla Y_{l m}=\frac{\partial Y_{lm}}{\partial \theta}\hat{\mathbf{e}_{\phi}} -\frac{1}{\sin \theta} \frac{\partial Y_{lm}}{\partial \phi}\hat{\mathbf{e}_{\theta}}
-\end{align}
+		\begin{align}
+			\mathbf{Y}_{l m}    & =Y_{l m}(\phi,\theta)\  \hat{\mathbf{e}}_r \\
+			\notag
+		    \mathbf{\Psi}_{l m} & =r \nabla Y_{l m}=\frac{1}{\sin \theta} \frac{\partial Y_{lm}}{\partial \phi}\hat{\mathbf{e}_{\phi}} + \frac{\partial Y_{lm}}{\partial \theta}\hat{\mathbf{e}_{\theta}} \\
+		    \mathbf{\Phi}_{l m} & =\overrightarrow{\mathbf{r}} \times \nabla Y_{l m}=\frac{\partial Y_{lm}}{\partial \theta}\hat{\mathbf{e}_{\phi}} -\frac{1}{\sin \theta} \frac{\partial Y_{lm}}{\partial \phi}\hat{\mathbf{e}_{\theta}}
+		\end{align}
 
-\subsection{Paragraph Three}
+	\subsection{Paragraph Three}
 
-Tables.
+		Tables.
 
-\begin{table}[h]
-	\renewcommand\arraystretch{2}
-	\centering
-	\caption{This is table 1.}
-	\begin{tabular}{|c|c|c|c|}
-		\hline \        & X & Y             & Z             \\
-		\hline particle & 2 & $\frac{3}{4}$ & $\frac{1}{2}$ \\
-		\hline ion      & 1 & $\frac{1}{4}$ & 0             \\
-		\hline electron & 1 & $\frac{2}{4}$ & $\frac{1}{2}$ \\
-		\hline
-	\end{tabular}
-\end{table}
+		\begin{table}[h]
+			\renewcommand\arraystretch{2}
+			\centering
+			\caption{This is table 1.}
+			\begin{tabular}{|c|c|c|c|}
+				\hline \        & X & Y             & Z             \\
+				\hline particle & 2 & $\frac{3}{4}$ & $\frac{1}{2}$ \\
+				\hline ion      & 1 & $\frac{1}{4}$ & 0             \\
+				\hline electron & 1 & $\frac{2}{4}$ & $\frac{1}{2}$ \\
+				\hline
+			\end{tabular}
+		\end{table}
 
 \section{Section Three}
 
-Reference.
+	Reference.
 
-\begin{thebibliography}{99}  
-\bibitem{ref1}Zheng L, Wang S, Tian L, et al., ApJ, 2015: 1741-1750.  
-\bibitem{ref2}Arandjelov R, Zisserman A, IEEE, 2012: 2911-2918.  
-\end{thebibliography}
+	\begin{thebibliography}{99}  
+		\bibitem{ref1}Zheng L, Wang S, Tian L, et al., ApJ, 2015: 1741-1750.  
+		\bibitem{ref2}Arandjelov R, Zisserman A, IEEE, 2012: 2911-2918.  
+	\end{thebibliography}
 
 % \end{spacing}
 
