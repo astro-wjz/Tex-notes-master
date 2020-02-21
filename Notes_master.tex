@@ -34,6 +34,7 @@
 	% \usepackage[colorlinks, citecolor=blue]{hyperref}
 	\usepackage{amsmath}
 	\numberwithin{equation}{section} % Set equations number style.
+	\allowdisplaybreaks[4] % Force multi-line equations to spilt when span two pages.
 
 \newcommand{\tcr}{\textcolor{blue}}
 \newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{\tcr{\cite{#1}}}}}
@@ -121,11 +122,12 @@
 			\end{tabular}
 		\end{table}
 
-\section{Section Three}
+% \section{Section Three}
 
-	Reference.
+% Reference.
 
-	\begin{thebibliography}{99}  
+	\begin{thebibliography}{99} 
+	\addcontentsline{toc}{section}{References} 
 		\bibitem{ref1}Zheng L, Wang S, Tian L, et al., ApJ, 2015: 1741-1750.  
 		\bibitem{ref2}Arandjelov R, Zisserman A, IEEE, 2012: 2911-2918.  
 	\end{thebibliography}
