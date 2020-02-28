@@ -36,15 +36,14 @@
 	\usepackage{amssymb}
 	\usepackage{setspace}
 	\usepackage{graphicx}
-	\usepackage{subfigure}
 	\usepackage{caption}
 	\usepackage{subfig}
-	% \usepackage[colorlinks, citecolor=blue]{hyperref}
+	\usepackage[colorlinks,linkcolor=black,anchorcolor=blue,citecolor=blue,CJKbookmarks=True]{hyperref}
 	\usepackage{amsmath}
 	\numberwithin{equation}{section} % 设置公式编号格式为不连续编号.
 	\allowdisplaybreaks[4] % 跨页方程组自动分割到两页.
 
-\newcommand{\tcr}{\textcolor{blue}}
+\newcommand{\tcr}{\textcolor{blue}} % 重新定义一个引用上标 upcite，引用编号为上角标，颜色为蓝色
 \newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{\tcr{\cite{#1}}}}}
 
 \title{{\Huge 请在此处输入标题}}
@@ -84,17 +83,18 @@
 
 		\begin{figure}[h]
 			\centering
+			\label{fig1}
 			\includegraphics[width=4cm,height=5cm]{2-1.png}
 			\caption{描述这是图片1.}
 		\end{figure}
 
 		\begin{figure}[ht]
 			\centering
-			\subfigure[图片1(a)]{
+			\subfloat[图片1(a)]{\label{fig2a}
 			\includegraphics[width=4cm,height=5cm]{2-1.png}}
-			\hspace{0in}
-			\subfigure[图片1(b)]{
-			\includegraphics[width=4cm,height=5cm]{2-1.png}}
+			\quad
+			\subfloat[图片1(b)]{\label{fig2b}
+			\includegraphics[width=4cm,height=5cm]{2-1.png}} \\
 			\caption{描述这是图片 2.}
 		\end{figure}
 
@@ -108,7 +108,7 @@
 
 		\begin{align}
 			\mathbf{Y}_{l m}    & =Y_{l m}(\phi,\theta)\  \hat{\mathbf{e}}_r \\
-			\notag
+			\notag %下面的公式不显示编号
 		    \boldsymbol{\Psi}_{l m} & =r \nabla Y_{l m}=\frac{1}{\sin \theta} \frac{\partial Y_{lm}}{\partial \phi}\hat{\mathbf{e}_{\phi}} + \frac{\partial Y_{lm}}{\partial \theta}\hat{\mathbf{e}_{\theta}} \\
 		    \boldsymbol{\Phi}_{l m} & =\overrightarrow{\mathbf{r}} \times \nabla Y_{l m}=\frac{\partial Y_{lm}}{\partial \theta}\hat{\mathbf{e}_{\phi}} -\frac{1}{\sin \theta} \frac{\partial Y_{lm}}{\partial \phi}\hat{\mathbf{e}_{\theta}}
 		\end{align}
