@@ -28,10 +28,9 @@
 	\usepackage{amssymb}
 	\usepackage{setspace}
 	\usepackage{graphicx}
-	\usepackage{subfigure}
 	\usepackage{caption}
 	\usepackage{subfig}
-	% \usepackage[colorlinks, citecolor=blue]{hyperref}
+	\usepackage[colorlinks,linkcolor=black,anchorcolor=blue,citecolor=blue,CJKbookmarks=True]{hyperref}
 	\usepackage{amsmath}
 	\numberwithin{equation}{section} % Set equations number style.
 	\allowdisplaybreaks[4] % Force multi-line equations to spilt when span two pages.
@@ -76,17 +75,18 @@
 
 		\begin{figure}[h]
 			\centering
+			\label{fig1}
 			\includegraphics[width=4cm,height=5cm]{2-1.png}
 			\caption{This is Figure 1.}
 		\end{figure}
 
 		\begin{figure}[ht]
 			\centering
-			\subfigure[Figure 2(a)]{
+			\subfloat[Figure 2(a)]{\label{fig2a}
 			\includegraphics[width=4cm,height=5cm]{2-1.png}}
-			\hspace{0in}
-			\subfigure[Figure 2(b)]{
-			\includegraphics[width=4cm,height=5cm]{2-1.png}}
+			\quad
+			\subfloat[Figure 2(b)]{\label{fig2b}
+			\includegraphics[width=4cm,height=5cm]{2-1.png}} \\
 			\caption{This is Figure 2.}
 		\end{figure}
 
